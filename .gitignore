@@ -1,6 +1,4 @@
-*/.idea
-*/cmake-build-debug
-*/vgcore*
-*/a.out
-*/CMakeLists.txt
-*/vgcore*
+*/cmake-build-debug/*
+*/CMakeList*
+*/*.out
+*/.idea/*
