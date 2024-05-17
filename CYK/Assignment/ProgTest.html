@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<!-- saved from url=(0071)https://progtest.fit.cvut.cz/index.php?X=Task&Cou=405&Tgr=2645&Tsk=1817 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>chladja4@progtest.fit.cvut.cz - ProgTest</title>
+  
+  <link href="./ProgTest_files/css.css" rel="stylesheet" type="text/css">
+  <script src="./ProgTest_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body bgcolor="#828273" text="#000000">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr height="25">
+    <td align="left" bgcolor="#00ff00"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=405">BI-AAG (23/24 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=405&amp;Tgr=2645">Zápočtový úkol 2</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Dekódování starých textů</b></span></td>
+    <td align="right" bgcolor="#00ff00"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+       <td class="header"><b>Dekódování starých textů</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="https://progtest.fit.cvut.cz/index.php?X=TaskU&amp;Cou=405&amp;Tgr=2645&amp;Tsk=1817" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>18.12.2023 12:00:00</b></td>
+        <td class="rtCell" align="right" id="countdown">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">2 /  50</td>
+       </tr>
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">0 / 50</td>
+       </tr>
+       <tr>
+
+        <td class="lrtbCell" colspan="3" align="left">
+
+<p>
+Při průzkumu na nejodlehlejším místě naší planety byly objeveny pozůstatky dávné civilizace, pečlivě ukryté v temných hlubinách jeskyní.
+Mezi těmito vzácnými nálezy jsme narazili na hliněné tabulky s tajemnými texty, jejichž význam zůstává zahalen v mlze.
+Co je zvláštní, každá tabulka se zdá být psána jiným jazykem.
+
+</p><p>
+Profesoři z univerzity se ocitli před výzvou: Zjistí jaký jazyk koresponduje s texty na jednotlivých tabulkách?
+Aby odhalili tuto záhadu, shromáždili informace o všech možných jazycích, kterými by mohly být texty napsány.
+Tyto jazyky formálně popsali pomocí gramatik.
+
+</p><p>
+Pro usnadnění procesu automatického zpracování těchto jazyků navrhli profesoři standardizovaný zápis všech pravidel a převedli gramatiky do této jednotné formy.
+Tato reprezentace umožňuje přepsat levou stranu pravidla na dva neterminály nebo jeden terminál.
+V případě potřeby generování prázdného slova dovoluje i pravidlo, které přepíše počáteční neterminál na nic, přičemž však počáteční neterminál pak nesmí být obsažen v pravé straně jakéhokoliv pravidla této gramatiky.
+
+</p><p>
+Následující noc byla věnována přepisu symbolů z hliněných tabulek.
+K našemu obrovskému potěšení používala tato starodávná civilizace sadu symbolů, která přesně odpovídá symbolům v ASCII kódování, což nám umožnilo snadněji převést symboly do moderní podoby a lehce zpracovávat počítači.
+
+</p><p>
+Na univerzitě však nejsou zdatní programátoři, proto shání pomoc.
+Univerzita hledá ty, kdo by byli schopni napsat program, který by rozhodl, zda dané slovo patří do jazyka reprezentovaného gramatikami popsanými výše.
+V případě kladné odpovědi je třeba navíc najít způsob, jak může být toto slovo vytvořeno podle pravidel gramatiky.
+
+</p><p>
+Úkol implementujte v podobě funkce programu v C++, jejíž signatura je: <code>std::vector&lt;size_t&gt; trace(const Grammar&amp;, const Word&amp;);</code>.
+Vstupem funkce je gramatika jazyka (reprezentována jako struktura <tt>Grammar</tt>) a slovo (<tt>Word</tt>), pro které máte zjistit, zda patří do jazyka.
+Tyto struktury jsou definovány v testovacím prostředí, vizte ukázkový soubor.
+Gramatika je definována standardně jako v přednáškách.
+Pro zjednodušení jsou symboly gramatiky definovány jako jakékoliv hodnoty typu <tt>char</tt>.
+Pokud slovo do jazyka patří, pak vraťte nějakou posloupnost indexů pravidel, ze kterých vzniklo postupným derivováním nejlevějšího neterminálu.
+Pravidla jsou číslována od nuly.
+Pokud slovo do jazyka nepatří, pak je očekáváno, že vrátíte prázdnou posloupnost.
+
+</p><p>
+Je zaručeno, že na vstupu přijde validní gramatika s pravidly podle zadání, tedy:
+</p><ul>
+  <li>množiny symbolů (<code>Grammar::m_Terminals</code>, <code>Grammar::m_Nonterminals</code>) nebudou mít průnik,
+  </li><li>veškerá pravidla budou obsahovat pouze symboly z těchto dvou množin,
+  </li><li>všechna pravidla budou mít na pravé straně právě jeden terminál, dva neterminály, nebo, pokud je levou stranou počáteční neterminál, nic (ale pak se ale počáteční neterminál nevyskytuje nikde na pravé straně jiného pravidla),
+  </li><li>počáteční symbol gramatiky se vyskytuje v množině neterminálů a
+  </li><li>mezi pravidly nejsou duplicity.
+</li></ul>
+
+<p>Odevzdávejte zdrojový soubor, který obsahuje implementaci požadované funkce <tt>trace</tt>.
+Do zdrojového souboru přidejte i další Vaše podpůrné funkce, které jsou z <tt>trace</tt> volané.
+Funkce bude volaná z testovacího prostředí, je proto důležité přesně dodržet zadané rozhraní funkce.
+Za základ pro implementaci použijte kód z ukázky níže.
+V kódu chybí vyplnit funkci <tt>trace</tt> (a případné další podpůrné funkce).
+Ukázka obsahuje testovací funkci <tt>main</tt>, uvedené hodnoty jsou použité při základním testu.
+Všimněte si, že vkládání hlavičkových souborů, struktur <code>Grammar</code>, deklarace <code>Word</code> a <code>Symbol</code> a funkce <tt>main</tt> jsou zabalené v bloku podmíněného překladu (<tt>#ifdef/#endif</tt>).
+Prosím, ponechte bloky podmíněného překladu i v odevzdávaném zdrojovém souboru.
+Podmíněný překlad Vám zjednoduší práci.
+Při kompilaci na Vašem počítači můžete program normálně spouštět a testovat.
+Při kompilaci na Progtestu funkce <tt>main</tt> a vkládání hlavičkových souborů "zmizí", tedy nebude  kolidovat s hlavičkovými soubory a funkcí <tt>main</tt> testovacího prostředí.</p>
+
+<p>
+Pro základ implementace můžete využít soubor ke stažení níže v sekci Vzorová data.
+
+</p><p>
+Váš program bude spouštěn v omezeném testovacím prostředí.
+Je omezen dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i velikost dostupné paměti.
+
+</p><p>
+V nápovědách má input formát sekvence symbolů oddělených mezerami, tj. <tt>"a b"</tt> je <tt>Word{'a', 'b'}</tt>.</p></td> 
+
+       </tr>
+
+
+       <tr>
+        <td class="ltbCell" colspan="2" align="left"><b>Vzorová data:</b></td>
+        <td class="rtbCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskS&amp;Cou=405&amp;Tgr=2645&amp;Tsk=1817">Download</a></div></div></td>
+       </tr>
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="reftable">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input type="checkbox" name="SHOW_REF" onchange="showRefSolution()">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" align="left" colspan="2"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.001 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 1.254 s (limit: 9.999 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.762 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Celkem bodů: 1.00 * 5.00 = 5.00</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>1</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>77</b></td>
+     <td class="ar"><span class="textWarn">77.00 ± 0.00</span></td>
+     <td class="ar"><span class="textWarn">77</span></td>
+     <td><tt>trace</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>20</b></td>
+     <td class="ar"><span class="textWarn">20.00 ± 0.00</span></td>
+     <td class="ar"><span class="textWarn">20</span></td>
+     <td><tt>trace</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>2</b></td>
+    <td class="tbOkSepCell" align="left"><b>14.12.2023 21:46:00</b></td>
+    <td class="rtbOkSepCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskD&amp;Cou=405&amp;Tgr=2645&amp;Tsk=1817&amp;Sub=1600901">Download</a></div></div></td>
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.0000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.002 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 5.855 s (limit: 9.998 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 2.092 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Celkem bodů: 1.00 * 5.00 = 5.00</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>5</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>47</b></td>
+     <td class="ar"><span class="textOk">9.40 ± 3.50</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>fillDpCYK</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>21</b></td>
+     <td class="ar"><span class="textOk">4.20 ± 2.93</span></td>
+     <td class="ar"><span class="textOk">8</span></td>
+     <td><tt>fillDpCYK</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbHalfSepCell" align="left"><b>1</b></td>
+    <td class="tbHalfSepCell" align="left"><b>14.12.2023 21:40:47</b></td>
+    <td class="rtbHalfSepCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskD&amp;Cou=405&amp;Tgr=2645&amp;Tsk=1817&amp;Sub=1600899">Download</a></div></div></td>
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">4.5000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Chyba při kompilaci v režimu 'pedantic' - 10% penalizace <a href="javascript: unlockAdvice(&#39;?X=Unlock&amp;Cou=405&amp;Tgr=2645&amp;Tsk=1817&amp;Unl=C1604240&#39;)">[Zpřístupnit nápovědu (2068 B)]</a></li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.002 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 5.499 s (limit: 9.998 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 1.543 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 90.00 % (= (1.00 * 1.00 * 1.00) * 0.9)</li></ul></li><li>Celkové procentní hodnocení: 90.00 %</li><li>Celkem bodů: 0.90 * 5.00 = 4.50</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>5</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>47</b></td>
+     <td class="ar"><span class="textOk">9.40 ± 3.50</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>fillDpCYK</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>21</b></td>
+     <td class="ar"><span class="textOk">4.20 ± 2.93</span></td>
+     <td class="ar"><span class="textOk">8</span></td>
+     <td><tt>fillDpCYK</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div>
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1702897200 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+{
+  var d = new Date ();
+  var x = ( deadLine . getTime () - d . getTime () );
+  var tgt = document . getElementById ( "countdown" );
+
+  if ( x > 0 )
+  {
+    var s = Math . floor ( x / 1000 );
+    var ms = (x % 1000) + "";
+  
+    while ( ms . length  < 3 ) ms = "0" + ms;
+  
+    tgt . innerHTML = s + "." + ms + " sec";
+  
+    window . setTimeout ( setCountdown, 117 );
+  }
+  else
+    tgt . innerHTML = '&nbsp;';
+}
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+ 
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+<script language="javascript">
+<!--
+setInterval ( keepSession, 600000 );
+//-->
+</script>
+ 
+
+
+</body></html>

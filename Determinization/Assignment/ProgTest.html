@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<!-- saved from url=(0071)https://progtest.fit.cvut.cz/index.php?X=Task&Cou=405&Tgr=2628&Tsk=1811 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>chladja4@progtest.fit.cvut.cz - ProgTest</title>
+  
+  <link href="./ProgTest_files/css.css" rel="stylesheet" type="text/css">
+  <script src="./ProgTest_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body bgcolor="#828273" text="#000000">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr height="25">
+    <td align="left" bgcolor="#00ff00"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=405">BI-AAG (23/24 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=405&amp;Tgr=2628">Zápočtový úkol 1</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Determinizace konečného automatu s více počátečními stavy</b></span></td>
+    <td align="right" bgcolor="#00ff00"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+       <td class="header"><b>Determinizace konečného automatu s více počátečními stavy</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="https://progtest.fit.cvut.cz/index.php?X=TaskU&amp;Cou=405&amp;Tgr=2628&amp;Tsk=1811" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>20.11.2023 12:00:00</b></td>
+        <td class="rtCell" align="right" id="countdown">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">3 /  50</td>
+       </tr>
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">1 / 50</td>
+       </tr>
+       <tr>
+
+        <td class="lrtbCell" colspan="3" align="left">
+
+<p>
+Algoritmus determinizace konečného automatu je klíčovým nástrojem v teorii formálních jazyků.
+Nalézá rozsáhlé praktické využití ve zpracování textu, analýze dat a v různých oblastech informatiky.
+Tím, že konvertuje nedeterministické automaty na deterministické, umožňuje efektivní analýzu jazyků, což je klíčové v kompilátorech, analýze textu, vyhledávání regulárních výrazů, řízení sítí, databázových systémech a mnoha dalších aplikacích.
+
+</p><p>
+Úkolem je najít deterministický konečný automat <strong>bez zbytečných a nedosažitelných stavů</strong> takový, aby jazyk, který přijímá byl ekvivalentní k jazyku zadaného nedeterministického konečného automatu s více počátečními stavy.
+
+</p><p>
+Determinizaci implementujte v podobě funkce programu v C++, jejíž signatura je: <code>DFA determinize ( const MISNFA &amp; nfa );</code>.
+Vstupem, resp. výstupem algoritmu jsou automaty v podobě struktur <code>MISNFA</code>, resp. <code>DFA</code> reprezentující nedeterministický konečný automat s více poč. stavy, resp. deterministický konečný automat.
+Tyto struktury jsou definovány v testovacím prostředí, viz ukázka níže.
+Pro zjednodušení jsou stavy definovány jako hodnoty typu <tt>int</tt> a symboly abecedy jako hodnoty typu <tt>char</tt>.
+
+</p><p>
+Porovnání automatů s referenčním výsledkem se provádí přes převod na minimální deterministický konečný automat.
+Vaše výstupy se mohou lišit (např. v pojmenování stavů).
+Po převedení na minimální automat, <strong>které provede testovací prostředí</strong> (tj. minimalizace není vaší starostí), však musí dát ekvivalentní automat (pojmenování stavů nehraje roli).
+
+</p><p>
+Je zaručeno, že na vstupu přijde validní nedeterministický konečný automat s více počátečními stavy, tedy:
+</p><ul>
+  <li>množiny stavů (<code>MISNFA::m_States</code>), počátečních stavů (<code>MISNFA::m_InitialStates</code>) a symbolů abecedy (<code>MISNFA::m_Alphabet</code>) budou neprázdné,</li>
+  <li>počáteční a koncové stavy z množin <code>MISNFA::m_InitialStates</code> a <code>MISNFA::m_FinalStates</code> budou také prvky množiny stavů <code>MISNFA::m_States</code>,
+  </li><li>pokud nebude pro nějaký stav <tt>q</tt> a symbol abecedy <tt>a</tt> definovaný přechod v automatu, pak v mapě <code>MISNFA::m_Transitions</code> nebude ke klíči <tt>(q, a)</tt> přiřazená hodnota prázdná množina, ale tento klíč nebude vůbec existovat,
+  </li><li>v mapě přechodů <code>MISNFA::m_Transitions</code> se vyskytují také jen prvky, které jsou specifikovány v množině symbolů abecedy a stavů.
+</li></ul>
+
+<p>
+Výsledný <tt>DFA</tt> musí také splňovat podmínky definice automatu, tedy musí platit to samé co výše pro MISNFA (až na zřejmé změny kvůli rozdílným definicím počátečního stavu a přechodové funkce).
+
+</p><p>
+V případě, že jazyk automatu je prázdný, odevzdávejte jednostavový automat nad stejnou abecedou, jako je původní automat.
+
+</p><p>Odevzdávejte zdrojový soubor, který obsahuje implementaci požadované funkce
+<tt>determinize</tt>. Do zdrojového souboru přidejte i další Vaše podpůrné funkce, které jsou
+z <tt>determinize</tt> volané. Funkce bude volaná z testovacího prostředí, je proto
+důležité přesně dodržet zadané rozhraní funkce. Za základ pro implementaci použijte
+kód z ukázky níže. V kódu chybí vyplnit funkci <tt>determinize</tt> (a případné další
+podpůrné funkce). Ukázka obsahuje testovací funkci <tt>main</tt>, uvedené hodnoty jsou
+použité při základním testu. Všimněte si, že vkládání hlavičkových souborů, struktur <code>DFA</code> a <code>MISNFA</code>
+a funkce <tt>main</tt> jsou zabalené v bloku podmíněného překladu (<tt>#ifdef/#endif</tt>). Prosím, ponechte
+bloky podmíněného překladu i v odevzdávaném zdrojovém souboru. Podmíněný překlad
+Vám zjednoduší práci. Při kompilaci na Vašem počítači můžete program normálně
+spouštět a testovat. Při kompilaci na Progtestu funkce <tt>main</tt> a vkládání
+hlavičkových souborů "zmizí", tedy nebude  kolidovat s hlavičkovými soubory a funkcí
+<tt>main</tt> testovacího prostředí.</p>
+
+<p>
+Pro základ implementace můžete využít soubor ke stažení níže v sekci Vzorová data.
+Tento soubor obsahuje také několik základních testů, mějte však na paměti, že výsledky Vaší ímplementace se mohou lišit.
+Testy jsou nastaveny podle výsledků, které dává jedno z referenčních řešení.
+Možná si je tedy budete muset upravit.
+
+</p><p>
+Váš program bude spouštěn v omezeném testovacím prostředí.
+Je omezen dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i velikost dostupné paměti.</p></td> 
+
+       </tr>
+
+
+       <tr>
+        <td class="ltbCell" colspan="2" align="left"><b>Vzorová data:</b></td>
+        <td class="rtbCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskS&amp;Cou=405&amp;Tgr=2628&amp;Tsk=1811">Download</a></div></div></td>
+       </tr>
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="reftable">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input type="checkbox" name="SHOW_REF" onchange="showRefSolution()">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" align="left" colspan="2"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.005 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test meznich hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.001 s (limit: 9.995 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.943 s (limit: 9.994 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 1.090 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Celkem bodů: 1.00 * 5.00 = 5.00</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>3</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>84</b></td>
+     <td class="ar"><span class="textOk">28.00 ± 16.97</span></td>
+     <td class="ar"><span class="textOk">40</span></td>
+     <td><tt>doSomethingElse</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>22</b></td>
+     <td class="ar"><span class="textOk">7.33 ± 4.92</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>doSomethingElse</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>3</b></td>
+    <td class="tbOkSepCell" align="left"><b>31.10.2023 10:44:11</b></td>
+    <td class="rtbOkSepCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskD&amp;Cou=405&amp;Tgr=2628&amp;Tsk=1811&amp;Sub=1567816">Download</a></div></div></td>
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.0000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.003 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test meznich hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.001 s (limit: 9.997 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.872 s (limit: 9.996 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.853 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Použité nápovědy: 1</li><li>Penalizace za vyčerpané nápovědy: Není (1 &lt;= 50 limit)</li><li>Celkové procentní hodnocení: 100.00 %</li><li>Celkem bodů: 1.00 * 5.00 = 5.00</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>10</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>103</b></td>
+     <td class="ar"><span class="textOk">10.30 ± 9.88</span></td>
+     <td class="ar"><span class="textOk">38</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>28</b></td>
+     <td class="ar"><span class="textOk">2.80 ± 2.68</span></td>
+     <td class="ar"><span class="textOk">10</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>2</b></td>
+    <td class="tbOkSepCell" align="left"><b>30.10.2023 23:18:23</b></td>
+    <td class="rtbOkSepCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskD&amp;Cou=405&amp;Tgr=2628&amp;Tsk=1811&amp;Sub=1567643">Download</a></div></div></td>
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.0000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.003 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test meznich hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.001 s (limit: 9.997 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.677 s (limit: 9.996 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty s memdbg': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.966 s (limit: 10.000 s)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Použité nápovědy: 1</li><li>Penalizace za vyčerpané nápovědy: Není (1 &lt;= 50 limit)</li><li>Celkové procentní hodnocení: 100.00 %</li><li>Celkem bodů: 1.00 * 5.00 = 5.00</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>7</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>108</b></td>
+     <td class="ar"><span class="textOk">15.43 ± 12.70</span></td>
+     <td class="ar"><span class="textOk">44</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>29</b></td>
+     <td class="ar"><span class="textOk">4.14 ± 3.56</span></td>
+     <td class="ar"><span class="textOk">10</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table width="100%" border="0" cellspacing="0" cellpadding="2" id="maintable">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbFailSepCell" align="left"><b>1</b></td>
+    <td class="tbFailSepCell" align="left"><b>30.10.2023 23:04:30</b></td>
+    <td class="rtbFailSepCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskD&amp;Cou=405&amp;Tgr=2628&amp;Tsk=1811&amp;Sub=1567630">Download</a></div></div></td>
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">0.0000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test': Neúspěch<ul><li>Dosaženo: 92.86 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.005 s (limit: 10.000 s)</li><li>Neúspěch v závazném testu, hodnocení: 0.00 %</li><li><input type="checkbox" name="cb_T5422139" onchange="CBpressed( &#39;T5422139&#39; )">&nbsp;Nesprávný výstup<div id="pre_T5422139" style="display: none; padding-left: 20px;"><pre> Found unreachable or useless state.</pre><input type="checkbox" name="cb_I5422139" onchange="CBpressed( &#39;I5422139&#39; )">&nbsp;Vstupní data&nbsp;<a href="https://progtest.fit.cvut.cz/index.php?X=Advice&amp;UID=I5422139">[125 B / 125 B]</a><br><pre id="pre_I5422139" style="display: none">MISNFA h m q 
+ &lt;0 - - -
+&gt; 1 4 3 2
+  2 0 0 0
+  3 - - 4
+  4 7 0 8
+ &lt;5 - - 9
+ &lt;6 5 8 6
+  7 7 - 8
+  8 - - -
+  9 - - 4
+  10 0 0 0
+</pre><input type="checkbox" name="cb_O5422139" onchange="CBpressed( &#39;O5422139&#39; )">&nbsp;Výstupní data&nbsp;<a href="https://progtest.fit.cvut.cz/index.php?X=Advice&amp;UID=O5422139">[51 B / 51 B]</a><br><pre id="pre_O5422139" style="display: none">DFA h m q 
+&gt; 0 1 2 3
+  1 - - -
+  2 - - 1
+  3 - - -
+</pre><input type="checkbox" name="cb_R5422139" onchange="CBpressed( &#39;R5422139&#39; )">&nbsp;Reference&nbsp;<a href="https://progtest.fit.cvut.cz/index.php?X=Advice&amp;UID=R5422139">[61 B / 61 B]</a><br><pre id="pre_R5422139" style="display: none">DFA h m q 
+ &lt;1 - - -
+&gt; 2 5 4 3
+  3 1 1 1
+  4 - - 5
+  5 - 1 -
+</pre></div></li></ul></li>
+<li>Celkové hodnocení: 0.00 %</li></ul></li><li>Celkové procentní hodnocení: 0.00 %</li><li>Celkem bodů: 0.00 * 5.00 = 0.00</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table border="0" cellpadding="2">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>7</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>106</b></td>
+     <td class="ar"><span class="textOk">15.14 ± 12.77</span></td>
+     <td class="ar"><span class="textOk">44</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>29</b></td>
+     <td class="ar"><span class="textOk">4.14 ± 3.56</span></td>
+     <td class="ar"><span class="textOk">10</span></td>
+     <td><tt>determinize</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div>
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1700478000 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+{
+  var d = new Date ();
+  var x = ( deadLine . getTime () - d . getTime () );
+  var tgt = document . getElementById ( "countdown" );
+
+  if ( x > 0 )
+  {
+    var s = Math . floor ( x / 1000 );
+    var ms = (x % 1000) + "";
+  
+    while ( ms . length  < 3 ) ms = "0" + ms;
+  
+    tgt . innerHTML = s + "." + ms + " sec";
+  
+    window . setTimeout ( setCountdown, 117 );
+  }
+  else
+    tgt . innerHTML = '&nbsp;';
+}
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+ 
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+<script language="javascript">
+<!--
+setInterval ( keepSession, 600000 );
+//-->
+</script>
+ 
+
+
+</body></html>
